@@ -172,10 +172,6 @@ img { max-width: 100%; display: block; }
   line-height: .95;
   letter-spacing: .02em;
   font-weight: 800;
-  background: linear-gradient(120deg, var(--brand) 0%, var(--brand-strong) 55%, #ffd9a0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: var(--brand);
   filter: drop-shadow(0 0 30px var(--brand-glow));
 }
