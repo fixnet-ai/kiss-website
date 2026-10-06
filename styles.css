@@ -168,7 +168,7 @@ img { max-width: 100%; display: block; }
 
 .hero-title {
   margin: 22px 0 6px;
-  font-size: clamp(56px, 9vw, 108px);
+  font-size: clamp(44px, 6.5vw, 80px);
   line-height: .95;
   letter-spacing: .02em;
   font-weight: 800;
@@ -182,19 +182,24 @@ img { max-width: 100%; display: block; }
 
 /* K.I.S.S → Keep it simple, stupid — hover expand */
 .kiss-acronym { cursor: default; }
-.kiss-acronym .w { display: inline-flex; align-items: baseline; }
+.kiss-acronym .w {
+  display: inline-block;
+  transform: scale(var(--s, 1));
+  transform-origin: center bottom;
+  transition: transform .4s cubic-bezier(.22, 1, .36, 1);
+}
 .kiss-acronym .rest {
   display: inline-block;
   max-width: 0;
   opacity: 0;
   overflow: hidden;
   white-space: nowrap;
-  font-size: .5em;
+  font-size: .45em;
   letter-spacing: normal;
-  transition: max-width .6s cubic-bezier(.2,.7,.2,1), opacity .3s ease;
+  vertical-align: baseline;
+  transition: max-width .55s cubic-bezier(.22, 1, .36, 1), opacity .4s ease;
 }
-.kiss-acronym:hover .rest,
-.kiss-acronym.hovered .rest { max-width: 4em; opacity: 1; }
+.kiss-acronym .w.on .rest { max-width: 4em; opacity: 1; }
 .hero-tagline {
   margin: 0 0 16px;
   font-size: clamp(22px, 3.4vw, 30px);
@@ -271,8 +276,12 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--border);
 }
 .win-title { font-size: 12px; font-weight: 600; color: var(--text-3); letter-spacing: .02em; }
-.win-body { flex: 1; min-height: 0; overflow: hidden; background: #05070A; }
-.win-body img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.win-body { flex: 1; min-height: 0; overflow: hidden; background: #05070A; position: relative; }
+.scr { position: absolute; inset: 0; object-fit: cover; display: block; }
+.win-body .scr { object-position: top left; }
+.scr-light { display: none; }
+:root[data-theme="light"] .scr-dark { display: none; }
+:root[data-theme="light"] .scr-light { display: block; }
 
 /* macOS chrome: traffic lights left, title centered */
 .win-bar--macos { justify-content: center; }
@@ -305,7 +314,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 24px 60px -24px rgba(0,0,0,.7);
   overflow: hidden;
 }
-.phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.phone .scr { object-position: top; }
 
 /* layout positions */
 .win--windows  { top: 0;     left: 0;      width: 232px; height: 170px; transform: rotate(-2.5deg); z-index: 1; }

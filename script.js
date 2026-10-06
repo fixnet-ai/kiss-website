@@ -32,3 +32,32 @@
     });
   });
 })();
+
+// K.I.S.S 鱼眼：鼠标划到哪个字母，哪个字母放大并展开对应单词（跟手、局部）
+(function () {
+  var acronym = document.querySelector('.kiss-acronym');
+  if (!acronym) return;
+  var words = Array.prototype.slice.call(acronym.querySelectorAll('.w'));
+  var THRESHOLD = 32;   // 展开单词的距离阈值
+  var RADIUS = 110;     // 鱼眼放大影响半径
+
+  acronym.addEventListener('mousemove', function (e) {
+    var mx = e.clientX;
+    words.forEach(function (w) {
+      var init = w.querySelector('.init');
+      var r = init.getBoundingClientRect();
+      var cx = r.left + r.width / 2;
+      var dist = Math.abs(mx - cx);
+      var t = Math.max(0, 1 - dist / RADIUS);
+      w.style.setProperty('--s', (1 + t * 0.3).toFixed(3));
+      w.classList.toggle('on', dist < THRESHOLD);
+    });
+  });
+
+  acronym.addEventListener('mouseleave', function () {
+    words.forEach(function (w) {
+      w.style.setProperty('--s', '1');
+      w.classList.remove('on');
+    });
+  });
+})();
