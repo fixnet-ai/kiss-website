@@ -177,19 +177,22 @@ img { max-width: 100%; display: block; }
 }
 
 /* K.I.S.S → Keep it simple, stupid — 自动轮播展开 */
-.kiss-acronym .w { display: inline-block; }
+.kiss-acronym .w { display: inline-block; margin-right: 0.15em; }
 .kiss-acronym .rest {
   display: inline-block;
   max-width: 0;
   opacity: 0;
   overflow: hidden;
   white-space: nowrap;
-  font-size: .45em;
   letter-spacing: normal;
   vertical-align: baseline;
-  transition: max-width .9s ease-in-out, opacity .9s ease-in-out;
+  transition: max-width .8s ease-in, opacity .8s ease-in;
 }
-.kiss-acronym .w.on .rest { max-width: 4em; opacity: 1; }
+.kiss-acronym .w.on .rest {
+  max-width: 5em;
+  opacity: 1;
+  transition: max-width .8s ease-out, opacity .8s ease-out;
+}
 .hero-tagline {
   margin: 0 0 16px;
   font-size: clamp(22px, 3.4vw, 30px);
