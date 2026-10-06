@@ -184,12 +184,13 @@ img { max-width: 100%; display: block; }
   opacity: 0;
   overflow: hidden;
   white-space: nowrap;
+  font-size: .45em;
   letter-spacing: normal;
   vertical-align: baseline;
   transition: max-width .8s ease-in, opacity .8s ease-in;
 }
 .kiss-acronym .w.on .rest {
-  max-width: 5em;
+  max-width: 4em;
   opacity: 1;
   transition: max-width .8s ease-out, opacity .8s ease-out;
 }
