@@ -33,39 +33,17 @@
   });
 })();
 
-// K.I.S.S 鱼眼：鼠标划到哪个字母，哪个字母放大并展开对应单词（跟手、局部）
+// K.I.S.S 自动轮播：每 5 秒换一个字母展开对应单词（Keep it simple stupid）
 (function () {
   var acronym = document.querySelector('.kiss-acronym');
   if (!acronym) return;
   var words = Array.prototype.slice.call(acronym.querySelectorAll('.w'));
-  var THRESHOLD = 28;   // 展开单词的距离阈值（只让当前字母展开）
-  var RADIUS = 120;     // 鱼眼放大影响半径
-  var centers = [];
-
-  function measure() {
-    centers = words.map(function (w) {
-      var r = w.querySelector('.init').getBoundingClientRect();
-      return r.left + r.width / 2;
-    });
-  }
-
-  acronym.addEventListener('mousemove', function (e) {
-    var mx = e.clientX;
-    words.forEach(function (w, i) {
-      var dist = Math.abs(mx - centers[i]);
-      var t = Math.max(0, 1 - dist / RADIUS);
-      w.style.transform = 'scale(' + (1 + t * 0.25).toFixed(3) + ')';
-      w.classList.toggle('on', dist < THRESHOLD);
-    });
-  });
-
-  acronym.addEventListener('mouseleave', function () {
-    words.forEach(function (w) {
-      w.style.transform = 'scale(1)';
-      w.classList.remove('on');
-    });
-  });
-
-  measure();
-  window.addEventListener('resize', measure);
+  if (!words.length) return;
+  var index = 0;
+  words[index].classList.add('on');
+  setInterval(function () {
+    words[index].classList.remove('on');
+    index = (index + 1) % words.length;
+    words[index].classList.add('on');
+  }, 5000);
 })();

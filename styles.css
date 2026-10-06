@@ -176,14 +176,8 @@ img { max-width: 100%; display: block; }
   text-shadow: 0 0 30px var(--brand-glow);
 }
 
-/* K.I.S.S → Keep it simple, stupid — hover expand */
-.kiss-acronym { cursor: default; }
-.kiss-acronym .w {
-  display: inline-block;
-  transform: scale(1);
-  transform-origin: center bottom;
-  transition: transform .16s ease-out;
-}
+/* K.I.S.S → Keep it simple, stupid — 自动轮播展开 */
+.kiss-acronym .w { display: inline-block; }
 .kiss-acronym .rest {
   display: inline-block;
   max-width: 0;
@@ -193,7 +187,7 @@ img { max-width: 100%; display: block; }
   font-size: .45em;
   letter-spacing: normal;
   vertical-align: baseline;
-  transition: max-width .25s cubic-bezier(.22, 1, .36, 1), opacity .25s ease;
+  transition: max-width .9s ease-in-out, opacity .9s ease-in-out;
 }
 .kiss-acronym .w.on .rest { max-width: 4em; opacity: 1; }
 .hero-tagline {
