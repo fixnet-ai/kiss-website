@@ -173,14 +173,14 @@ img { max-width: 100%; display: block; }
   letter-spacing: .02em;
   font-weight: 800;
   color: var(--brand);
-  filter: drop-shadow(0 0 30px var(--brand-glow));
+  text-shadow: 0 0 30px var(--brand-glow);
 }
 
 /* K.I.S.S → Keep it simple, stupid — hover expand */
 .kiss-acronym { cursor: default; }
 .kiss-acronym .w {
   display: inline-block;
-  transform: scale(var(--s, 1));
+  transform: scale(1);
   transform-origin: center bottom;
   transition: transform .16s ease-out;
 }

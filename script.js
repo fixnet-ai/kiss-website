@@ -54,14 +54,14 @@
     words.forEach(function (w, i) {
       var dist = Math.abs(mx - centers[i]);
       var t = Math.max(0, 1 - dist / RADIUS);
-      w.style.setProperty('--s', (1 + t * 0.25).toFixed(3));
+      w.style.transform = 'scale(' + (1 + t * 0.25).toFixed(3) + ')';
       w.classList.toggle('on', dist < THRESHOLD);
     });
   });
 
   acronym.addEventListener('mouseleave', function () {
     words.forEach(function (w) {
-      w.style.setProperty('--s', '1');
+      w.style.transform = 'scale(1)';
       w.classList.remove('on');
     });
   });
