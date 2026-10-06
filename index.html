@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KISS — Cross-Platform Proxy Client</title>
+  <meta name="description" content="KISS is a cross-platform proxy client for macOS, Linux, Windows, iOS and Android. One binary, every platform — manage subscriptions, route through sing-box, xray-core or mihomo." />
+  <meta property="og:title" content="KISS — Cross-Platform Proxy Client" />
+  <meta property="og:description" content="One binary, every platform. Manage subscriptions, route traffic, keep it simple." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fixnet-ai.github.io/kiss-website/" />
+  <meta property="og:image" content="https://fixnet-ai.github.io/kiss-website/icon.png" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <link rel="alternate icon" type="image/png" href="icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="KISS home">
+        <img class="brand-logo" src="logo.svg" alt="" width="28" height="28" />
+        <span class="brand-name">KISS</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#quickstart">Quick Start</a>
+        <a href="#inside">What's inside</a>
+        <a href="#install">Install</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="gh-link" href="https://github.com/fixnet-ai" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 3v2m0 14v2M5.22 5.22l1.42 1.42m10.72 10.72 1.42 1.42M3 12h2m14 0h2M5.22 18.78l1.42-1.42M16.36 7.64l1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-wrap">
+        <div class="hero-copy">
+          <span class="chip"><span class="chip-dot"></span>v0.1 · in development</span>
+          <h1 class="hero-title">KISS</h1>
+          <p class="hero-tagline">The cross-platform proxy client,<br />done <em>simply</em>.</p>
+          <p class="hero-desc">
+            One binary for macOS, Linux, Windows, iOS and Android. Import your
+            subscriptions, route through sing-box, xray-core or mihomo, and stay in
+            control — no WebView, no bloat.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#quickstart">Get Started</a>
+            <a class="btn btn-ghost" href="https://github.com/fixnet-ai" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="terminal-title">kiss — zsh</span>
+            </div>
+            <div class="terminal-body">
+              <p class="line"><span class="prompt">$</span> kiss subs</p>
+              <p class="line dim">  #  URL                         nodes   used   expiry</p>
+              <p class="line"><span class="c-amber">1</span>  https://example.com/sub      <span class="c-amber">42</span>   <span class="c-green">12.3G</span>  2027-01-01</p>
+              <p class="line"><span class="c-amber">2</span>  https://backup.example.com   <span class="c-amber">18</span>   <span class="c-green">2.1G</span>   2026-12-15</p>
+              <p class="line">&nbsp;</p>
+              <p class="line"><span class="prompt">$</span> kiss run --subscribe https://example.com/sub --port 7897</p>
+              <p class="line dim">  mixed inbound  →  127.0.0.1:7897</p>
+              <p class="line dim">  tun inbound    →  off</p>
+              <p class="line"><span class="c-green">  engine         →  running</span><span class="cursor">▋</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <h2 class="section-title">Features at a Glance</h2>
+        <p class="section-sub">Everything you expect from a proxy client — in one file.</p>
+        <div class="feature-grid">
+          <a class="feature" href="#inside">
+            <span class="feature-icon">🌍</span>
+            <h3>Cross-Platform</h3>
+            <p>macOS, Linux, Windows, iOS and Android from one codebase.</p>
+          </a>
+          <a class="feature" href="#inside">
+            <span class="feature-icon">📦</span>
+            <h3>Single Binary</h3>
+            <p>One file, no installer, no runtime dependencies.</p>
+          </a>
+          <a class="feature" href="#inside">
+            <span class="feature-icon">🔀</span>
+            <h3>Multi-Engine</h3>
+            <p>sing-box, xray-core and mihomo under a single client.</p>
+          </a>
+          <a class="feature" href="#inside">
+            <span class="feature-icon">📡</span>
+            <h3>Subscriptions</h3>
+            <p>Import, refresh, usage and expiry — all in one place.</p>
+          </a>
+          <a class="feature" href="#inside">
+            <span class="feature-icon">🛡️</span>
+            <h3>TUN + Mixed</h3>
+            <p>Transparent system proxy plus an HTTP/SOCKS inbound.</p>
+          </a>
+          <a class="feature" href="#inside">
+            <span class="feature-icon">🖥️</span>
+            <h3>Four Faces</h3>
+            <p>Tray, window, CLI and service are the same binary.</p>
+          </a>
+          <a class="feature" href="#inside">
+            <span class="feature-icon">⚡</span>
+            <h3>GPU-Rendered UI</h3>
+            <p>Native markup on the GPU — no WebView, no JavaScript.</p>
+          </a>
+          <a class="feature" href="#inside">
+            <span class="feature-icon">🗂️</span>
+            <h3>Local-First</h3>
+            <p>Your data lives in a local database, not the cloud.</p>
+          </a>
+          <a class="feature" href="#inside">
+            <span class="feature-icon">🧪</span>
+            <h3>Fully Tested</h3>
+            <p>Cross-platform CI plus real-device UI suites.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK START -->
+    <section class="section section-alt" id="quickstart">
+      <div class="container narrow">
+        <h2 class="section-title">Quick Example</h2>
+        <p class="section-sub">From a subscription URL to a running proxy — one command.</p>
+        <div class="code-block">
+          <div class="code-head"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="code-lang">shell</span></div>
+<pre><code><span class="tok-c"># Subscribe once, then run the engine headless</span>
+<span class="tok-p">kiss</span> run <span class="tok-flag">--subscribe</span> https://example.com/sub <span class="tok-flag">--port</span> 7897
+
+<span class="tok-c"># List your subscriptions — offline, straight from the local db</span>
+<span class="tok-p">kiss</span> subs
+
+<span class="tok-c"># Refresh or delete one subscription</span>
+<span class="tok-p">kiss</span> sub refresh https://example.com/sub</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INSIDE -->
+    <section class="section" id="inside">
+      <div class="container">
+        <h2 class="section-title">What's inside</h2>
+        <p class="section-sub">Four things a good proxy client needs — each first-class.</p>
+        <div class="inside-grid">
+          <article class="inside">
+            <h3><span class="inside-icon">📡</span>Subscription management</h3>
+            <p>Import by URL, refresh on a schedule, and track usage and expiry per
+            subscription. Settings, subscriptions and stats live in a local database.</p>
+            <div class="mini-code"><code><span class="tok-p">kiss</span> <span class="tok-flag">--subscribe</span> https://example.com/sub</code></div>
+          </article>
+          <article class="inside">
+            <h3><span class="inside-icon">🔀</span>Multi-engine routing</h3>
+            <p>One config layer over sing-box, xray-core and mihomo, so your
+            subscriptions keep working no matter the upstream format.</p>
+            <div class="mini-code"><code><span class="tok-p">kiss</span> run <span class="tok-flag">--port</span> 7897</code></div>
+          </article>
+          <article class="inside">
+            <h3><span class="inside-icon">🛡️</span>TUN &amp; mixed inbound</h3>
+            <p>Transparent system-wide proxy with TUN, or a plain HTTP/SOCKS mixed
+            inbound — or both at the same time.</p>
+            <div class="mini-code"><code><span class="tok-p">kiss</span> run <span class="tok-flag">--tun</span> <span class="tok-flag">--port</span> 7897</code></div>
+          </article>
+          <article class="inside">
+            <h3><span class="inside-icon">🖥️</span>Cross-platform UI</h3>
+            <p>The same product on desktop and mobile: GPU-rendered native views,
+            no WebView, no JavaScript runtime.</p>
+            <div class="mini-code"><code><span class="tok-p">zig</span> build run</code></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="section section-alt" id="why">
+      <div class="container narrow">
+        <h2 class="section-title">Why KISS</h2>
+        <ul class="why-list">
+          <li>
+            <strong>One binary, four faces.</strong>
+            Tray, window, CLI and service are the same file — pick the interface,
+            not a different program.
+          </li>
+          <li>
+            <strong>Local-first.</strong>
+            Settings, subscriptions and statistics live in a local database.
+          </li>
+          <li>
+            <strong>Native all the way down.</strong>
+            Written in Zig, rendered on the GPU — no WebView, no JavaScript runtime.
+          </li>
+          <li>
+            <strong>MIT licensed.</strong>
+            Free to use, inspect and modify.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- INSTALL -->
+    <section class="section" id="install">
+      <div class="container narrow">
+        <h2 class="section-title">Installation</h2>
+        <p class="section-sub">Binaries and one-line installers are in preparation.</p>
+        <div class="notice">
+          <strong>Pre-release.</strong>
+          KISS is under active development. The source is MIT-licensed and buildable
+          today — public binaries are coming soon.
+        </div>
+        <div class="code-block">
+          <div class="code-head"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="code-lang">shell</span></div>
+<pre><code><span class="tok-c"># Build and run from source</span>
+<span class="tok-p">zig</span> build run
+
+<span class="tok-c"># Run the full test suite</span>
+<span class="tok-p">zig</span> build test
+
+<span class="tok-c"># Install the service + tray (macOS / Linux / Windows)</span>
+./kiss <span class="tok-flag">--install</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY / LICENSE -->
+    <section class="section section-alt" id="community">
+      <div class="container narrow center">
+        <h2 class="section-title">Community</h2>
+        <p class="section-sub">KISS is part of the fixnet ecosystem.</p>
+        <div class="community-links">
+          <a class="btn btn-ghost" href="https://github.com/fixnet-ai" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            GitHub
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/fixnet-ai/kiss-website" target="_blank" rel="noopener">This site</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="logo.svg" alt="" width="20" height="20" />
+        <span class="brand-name">KISS</span>
+      </a>
+      <p class="footer-tag">The cross-platform proxy client.</p>
+      <p class="footer-meta">Released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a> · © 2026 fixnet-ai</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
