@@ -69,22 +69,48 @@
         </div>
 
         <div class="hero-visual" aria-hidden="true">
-          <div class="terminal">
-            <div class="terminal-bar">
-              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-              <span class="terminal-title">kiss — zsh</span>
+          <div class="devices">
+
+            <div class="win win--windows">
+              <div class="win-bar">
+                <span class="win-title">KISS</span>
+                <span class="wctl"><i class="wmin"></i><i class="wmax"></i><i class="wclose"></i></span>
+              </div>
+              <div class="win-body"><img src="screens/pad-land.png" alt=""></div>
             </div>
-            <div class="terminal-body">
-              <p class="line"><span class="prompt">$</span> kiss subs</p>
-              <p class="line dim">  #  URL                         nodes   used   expiry</p>
-              <p class="line"><span class="c-amber">1</span>  https://example.com/sub      <span class="c-amber">42</span>   <span class="c-green">12.3G</span>  2027-01-01</p>
-              <p class="line"><span class="c-amber">2</span>  https://backup.example.com   <span class="c-amber">18</span>   <span class="c-green">2.1G</span>   2026-12-15</p>
-              <p class="line">&nbsp;</p>
-              <p class="line"><span class="prompt">$</span> kiss run --subscribe https://example.com/sub --port 7897</p>
-              <p class="line dim">  mixed inbound  →  127.0.0.1:7897</p>
-              <p class="line dim">  tun inbound    →  off</p>
-              <p class="line"><span class="c-green">  engine         →  running</span><span class="cursor">▋</span></p>
+
+            <div class="win win--linux">
+              <div class="win-bar win-bar--linux">
+                <span class="win-title">KISS</span>
+                <span class="wctl"><i class="wclose"></i></span>
+              </div>
+              <div class="win-body"><img src="screens/pad-land.png" alt=""></div>
             </div>
+
+            <div class="win win--macos">
+              <div class="win-bar win-bar--macos">
+                <span class="mac-lights"><i class="dot dot-r"></i><i class="dot dot-y"></i><i class="dot dot-g"></i></span>
+                <span class="win-title">KISS</span>
+              </div>
+              <div class="win-body"><img src="screens/pad-land.png" alt=""></div>
+            </div>
+
+            <div class="phone phone--ios"><img src="screens/phone-ios.png" alt=""></div>
+            <div class="phone phone--android"><img src="screens/phone-android.png" alt=""></div>
+
+            <div class="terminal cli">
+              <div class="terminal-bar">
+                <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+                <span class="terminal-title">kiss — zsh</span>
+              </div>
+              <div class="terminal-body">
+                <p class="line"><span class="prompt">$</span> kiss subs</p>
+                <p class="line"><span class="c-amber">1</span>  example.com/sub    <span class="c-amber">42</span>   <span class="c-green">12.3G</span></p>
+                <p class="line"><span class="c-amber">2</span>  backup.example.com  <span class="c-amber">18</span>   <span class="c-green">2.1G</span></p>
+                <p class="line"><span class="prompt">$</span> kiss run --port 7897<span class="cursor">▋</span></p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

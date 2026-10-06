@@ -233,6 +233,81 @@ img { max-width: 100%; display: block; }
 .cursor { color: var(--brand); animation: blink 1.1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
+/* ---------- Hero device stack ---------- */
+.devices { position: relative; width: 480px; height: 520px; }
+
+.win {
+  position: absolute;
+  border-radius: 10px;
+  background: var(--bg-elv);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 24px 60px -24px rgba(0,0,0,.7);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.win-bar {
+  position: relative;
+  display: flex; align-items: center;
+  height: 30px; flex: none;
+  padding: 0 10px; gap: 8px;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+}
+.win-title { font-size: 12px; font-weight: 600; color: var(--text-3); letter-spacing: .02em; }
+.win-body { flex: 1; min-height: 0; overflow: hidden; background: #05070A; }
+.win-body img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+
+/* macOS chrome: traffic lights left, title centered */
+.win-bar--macos { justify-content: center; }
+.win-bar--macos .mac-lights { position: absolute; left: 10px; }
+.mac-lights { display: inline-flex; gap: 6px; align-items: center; }
+.mac-lights .dot { width: 10px; height: 10px; }
+
+/* windows chrome: title left, controls right */
+.win--windows .wctl { margin-left: auto; }
+
+/* linux chrome: title centered, close right */
+.win-bar--linux { justify-content: center; }
+.win-bar--linux .wctl { position: absolute; right: 10px; }
+
+/* window controls (min / max / close) drawn in CSS */
+.wctl { display: inline-flex; align-items: center; gap: 7px; }
+.wctl i { position: relative; display: block; width: 9px; height: 9px; }
+.wctl .wmin::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; margin-top: -.75px; background: var(--text-3); }
+.wctl .wmax { border: 1.5px solid var(--text-3); border-radius: 1px; }
+.wctl .wclose::before, .wctl .wclose::after { content: ''; position: absolute; left: 50%; top: 50%; width: 11px; height: 1.5px; background: var(--text-3); }
+.wctl .wclose::before { transform: translate(-50%,-50%) rotate(45deg); }
+.wctl .wclose::after { transform: translate(-50%,-50%) rotate(-45deg); }
+
+/* phones */
+.phone {
+  position: absolute;
+  border-radius: 18px;
+  background: #05070A;
+  border: 2px solid var(--border-strong);
+  box-shadow: 0 24px 60px -24px rgba(0,0,0,.7);
+  overflow: hidden;
+}
+.phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+
+/* layout positions */
+.win--windows  { top: 0;     left: 0;      width: 232px; height: 170px; transform: rotate(-2.5deg); z-index: 1; }
+.win--linux    { top: 8px;   right: 0;     width: 232px; height: 170px; transform: rotate(2.5deg);  z-index: 1; }
+.win--macos    { top: 66px;  left: 50px;   width: 380px; height: 272px; z-index: 2; }
+.phone--ios    { bottom: 0;  left: 44px;   width: 136px; height: 282px; transform: rotate(-2deg); z-index: 3; }
+.phone--android{ bottom: 0;  right: 44px;  width: 136px; height: 288px; transform: rotate(2deg);  z-index: 3; }
+
+/* CLI terminal card */
+.terminal.cli {
+  position: absolute;
+  bottom: 18px; left: 50%; transform: translateX(-50%);
+  width: 336px; max-width: none;
+  z-index: 4;
+}
+.terminal.cli .terminal-bar { padding: 9px 12px; }
+.terminal.cli .terminal-body { padding: 12px 15px 14px; font-size: 12px; line-height: 1.65; }
+
 /* ---------- Sections ---------- */
 .section { padding: 88px 0; }
 .section-alt { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -350,4 +425,7 @@ img { max-width: 100%; display: block; }
   .menu-toggle { display: flex; }
   .feature-grid { grid-template-columns: 1fr; }
   .container { padding: 0 18px; }
+}
+@media (max-width: 560px) {
+  .devices { transform: scale(0.72); transform-origin: top center; height: 375px; }
 }
