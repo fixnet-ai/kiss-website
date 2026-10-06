@@ -186,7 +186,7 @@ img { max-width: 100%; display: block; }
   display: inline-block;
   transform: scale(var(--s, 1));
   transform-origin: center bottom;
-  transition: transform .4s cubic-bezier(.22, 1, .36, 1);
+  transition: transform .16s ease-out;
 }
 .kiss-acronym .rest {
   display: inline-block;
@@ -197,7 +197,7 @@ img { max-width: 100%; display: block; }
   font-size: .45em;
   letter-spacing: normal;
   vertical-align: baseline;
-  transition: max-width .55s cubic-bezier(.22, 1, .36, 1), opacity .4s ease;
+  transition: max-width .25s cubic-bezier(.22, 1, .36, 1), opacity .25s ease;
 }
 .kiss-acronym .w.on .rest { max-width: 4em; opacity: 1; }
 .hero-tagline {

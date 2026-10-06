@@ -38,18 +38,23 @@
   var acronym = document.querySelector('.kiss-acronym');
   if (!acronym) return;
   var words = Array.prototype.slice.call(acronym.querySelectorAll('.w'));
-  var THRESHOLD = 32;   // 展开单词的距离阈值
-  var RADIUS = 110;     // 鱼眼放大影响半径
+  var THRESHOLD = 28;   // 展开单词的距离阈值（只让当前字母展开）
+  var RADIUS = 120;     // 鱼眼放大影响半径
+  var centers = [];
+
+  function measure() {
+    centers = words.map(function (w) {
+      var r = w.querySelector('.init').getBoundingClientRect();
+      return r.left + r.width / 2;
+    });
+  }
 
   acronym.addEventListener('mousemove', function (e) {
     var mx = e.clientX;
-    words.forEach(function (w) {
-      var init = w.querySelector('.init');
-      var r = init.getBoundingClientRect();
-      var cx = r.left + r.width / 2;
-      var dist = Math.abs(mx - cx);
+    words.forEach(function (w, i) {
+      var dist = Math.abs(mx - centers[i]);
       var t = Math.max(0, 1 - dist / RADIUS);
-      w.style.setProperty('--s', (1 + t * 0.3).toFixed(3));
+      w.style.setProperty('--s', (1 + t * 0.25).toFixed(3));
       w.classList.toggle('on', dist < THRESHOLD);
     });
   });
@@ -60,4 +65,7 @@
       w.classList.remove('on');
     });
   });
+
+  measure();
+  window.addEventListener('resize', measure);
 })();
