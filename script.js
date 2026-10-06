@@ -45,5 +45,5 @@
     words[index].classList.remove('on');
     index = (index + 1) % words.length;
     words[index].classList.add('on');
-  }, 5000);
+  }, 3000);
 })();
